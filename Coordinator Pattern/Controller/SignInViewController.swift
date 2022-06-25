@@ -1,5 +1,5 @@
 //
-//  ForgotViewController.swift
+//  SignIniewController.swift
 //  Coordinator Pattern
 //
 //  Created by Gokul Nair on 25/06/22.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ForgotViewController: UIViewController {
+class SignInViewController: UIViewController, CoordinatorBoard {
 
     override func viewDidLoad() {
         super.viewDidLoad()
