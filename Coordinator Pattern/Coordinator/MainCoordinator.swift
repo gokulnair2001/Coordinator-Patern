@@ -23,9 +23,10 @@ class MainCoordinator: Coordinator {
         self.navigationController.pushViewController(loginVC, animated: true)
     }
     
-    func navigateToMainVC() {
+    func navigateToMainVC(userName: String) {
         
         let mainVC = MainViewController.instanitiateFromStoryBoard()
+        mainVC.userName = userName
         self.navigationController.pushViewController(mainVC, animated: true)
     }
     
