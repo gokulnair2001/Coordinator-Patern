@@ -7,12 +7,12 @@
 
 import UIKit
 
-class MainViewController: UIViewController {
+class MainViewController: UIViewController, CoordinatorBoard {
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        self.navigationItem.hidesBackButton = true
     }
     
 

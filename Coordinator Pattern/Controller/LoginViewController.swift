@@ -7,23 +7,28 @@
 
 import UIKit
 
-class LoginViewController: UIViewController {
+class LoginViewController: UIViewController, CoordinatorBoard {
 
+    
+    var mainCoordinator: MainCoordinator?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+  
+    @IBAction func logInButton(_ sender: Any) {
+        mainCoordinator?.navigateToMainVC()
     }
-    */
+    
+    @IBAction func signInButton(_ sender: Any) {
+        mainCoordinator?.navigateToSignInVC()
+    }
+    
+    @IBAction func forgotPasswordButton(_ sender: Any) {
+        mainCoordinator?.navigateToResetPasswordVC()
+    }
+    
 
 }

@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ResetViewController: UIViewController {
+class ResetViewController: UIViewController, CoordinatorBoard {
 
     override func viewDidLoad() {
         super.viewDidLoad()
