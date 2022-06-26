@@ -13,7 +13,7 @@ class LoginViewController: UIViewController, CoordinatorBoard {
     @IBOutlet weak var userNameTF: UITextField!
     @IBOutlet weak var passwordTF: UITextField!
     
-    var mainCoordinator: MainCoordinator?
+    weak var loginChildCoordinator: LoginChildCoordinator?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,7 +23,7 @@ class LoginViewController: UIViewController, CoordinatorBoard {
   
     @IBAction func logInButton(_ sender: Any) {
         if userNameTF.text != "" {
-            mainCoordinator?.navigateToMainVC(userName: userNameTF.text!)
+            loginChildCoordinator?.navigateToMainVC(userName: userNameTF.text!)
         }else {
             DispatchQueue.main.async {
                 self.alertView(message: "User name is empty")
@@ -33,11 +33,11 @@ class LoginViewController: UIViewController, CoordinatorBoard {
     }
     
     @IBAction func signInButton(_ sender: Any) {
-        mainCoordinator?.navigateToSignInVC()
+        loginChildCoordinator?.navigateToSignInVC()
     }
     
     @IBAction func forgotPasswordButton(_ sender: Any) {
-        mainCoordinator?.navigateToResetPasswordVC()
+        loginChildCoordinator?.navigateToResetPasswordVC()
     }
     
 
