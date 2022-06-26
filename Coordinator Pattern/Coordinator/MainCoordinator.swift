@@ -11,6 +11,7 @@ import UIKit
 class MainCoordinator: Coordinator {
     
     var navigationController: UINavigationController
+    var childCoordinator: [Coordinator] = [Coordinator]()
     
     init(with _navigationController: UINavigationController) {
         self.navigationController = _navigationController
@@ -18,27 +19,18 @@ class MainCoordinator: Coordinator {
     
     func configureRootViewController() {
         
-        let loginVC = LoginViewController.instanitiateFromStoryBoard()
-        loginVC.mainCoordinator = self
-        self.navigationController.pushViewController(loginVC, animated: true)
+        let loginChildCoordinator = LoginChildCoordinator(with: self.navigationController)
+        childCoordinator.append(loginChildCoordinator)
+        loginChildCoordinator.mainCoordinator = self
+        loginChildCoordinator.configureRootViewController()
     }
     
-    func navigateToMainVC() {
-        
-        let mainVC = MainViewController.instanitiateFromStoryBoard()
-        self.navigationController.pushViewController(mainVC, animated: true)
+    func removeFromChildCoordinator(child: Coordinator) {
+        for (index, coordinator) in childCoordinator.enumerated() {
+            if(coordinator === child) {
+                childCoordinator.remove(at: index)
+                break
+            }
+        }
     }
-    
-    func navigateToResetPasswordVC() {
-        
-        let resetPasswordVC = ResetViewController.instanitiateFromStoryBoard()
-        self.navigationController.pushViewController(resetPasswordVC, animated: true)
-    }
-    
-    func navigateToSignInVC() {
-        
-        let forgotPasswordVC = SignInViewController.instanitiateFromStoryBoard()
-        self.navigationController.pushViewController(forgotPasswordVC, animated: true)
-    }
-    
 }
