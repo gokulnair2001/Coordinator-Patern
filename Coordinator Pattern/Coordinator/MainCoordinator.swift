@@ -8,10 +8,10 @@
 import Foundation
 import UIKit
 
-class MainCoordinator: Coordinator {
+class MainCoordinator: ParentCoordinator {
     
     var navigationController: UINavigationController
-    var childCoordinator: [Coordinator] = [Coordinator]()
+    var childCoordinator: [ChildCoordinator] = [ChildCoordinator]()
     
     init(with _navigationController: UINavigationController) {
         self.navigationController = _navigationController
@@ -19,13 +19,13 @@ class MainCoordinator: Coordinator {
     
     func configureRootViewController() {
         
-        let loginChildCoordinator = LoginChildCoordinator(with: self.navigationController)
+        let loginChildCoordinator = ChildCoordinatorFactory.create(with: self.navigationController, type: .login)
         childCoordinator.append(loginChildCoordinator)
-        loginChildCoordinator.mainCoordinator = self
-        loginChildCoordinator.configureRootViewController()
+        loginChildCoordinator.parentCoordinator = self
+        loginChildCoordinator.configureChildViewController()
     }
     
-    func removeFromChildCoordinator(child: Coordinator) {
+    func removeChildCoordinator(child: ChildCoordinator) {
         for (index, coordinator) in childCoordinator.enumerated() {
             if(coordinator === child) {
                 childCoordinator.remove(at: index)

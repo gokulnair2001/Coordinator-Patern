@@ -20,8 +20,13 @@ class LoginViewController: UIViewController, CoordinatorBoard {
 
         // Do any additional setup after loading the view.
     }
+    
+    deinit {
+        print("deinitialized loginvc")
+    }
   
     @IBAction func logInButton(_ sender: Any) {
+        
         if userNameTF.text != "" {
             loginChildCoordinator?.navigateToMainVC(userName: userNameTF.text!)
         }else {
