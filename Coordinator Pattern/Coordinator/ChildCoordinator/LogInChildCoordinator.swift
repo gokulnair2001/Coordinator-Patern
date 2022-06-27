@@ -8,28 +8,33 @@
 import Foundation
 import UIKit
 
-class LoginChildCoordinator: Coordinator {
+class LoginChildCoordinator: ChildCoordinator {
     
+
+    weak var parentCoordinator: ParentCoordinator?
     var navigationController: UINavigationController
-    weak var mainCoordinator: MainCoordinator?
+    
     var childCoordinator: [Coordinator] = [Coordinator]()
     
     init(with _navigationController: UINavigationController){
         self.navigationController = _navigationController
     }
     
-    func configureRootViewController() {
+    func configureChildViewController() {
         let loginVC = LoginViewController.instanitiateFromStoryBoard()
         loginVC.loginChildCoordinator = self
         self.navigationController.pushViewController(loginVC, animated: true)
     }
     
     func navigateToMainVC(userName: String) {
-        
-        let homeChildCoordinator = HomeChildCoordinator(with: self.navigationController, userName: userName)
-        mainCoordinator?.childCoordinator.append(homeChildCoordinator)
-        mainCoordinator?.removeFromChildCoordinator(child: self)
-        homeChildCoordinator.configureRootViewController()
+      
+        let homeChildCoordinator = ChildCoordinatorFactory.create(with: parentCoordinator!.navigationController, type: .main)
+        homeChildCoordinator.passParameter(value: HomeChildParameter(userName: userName))
+        print("⚠️\(homeChildCoordinator)")
+        parentCoordinator?.childCoordinator.append(homeChildCoordinator)
+        print("⚠️⚠️\(homeChildCoordinator)")
+        parentCoordinator?.removeChildCoordinator(child: self)
+        homeChildCoordinator.configureChildViewController()
     }
     
     func navigateToResetPasswordVC() {

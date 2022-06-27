@@ -18,6 +18,8 @@
 		55405BDF286654DF00FA6053 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 55405BDD286654DF00FA6053 /* LaunchScreen.storyboard */; };
 		556A36EA286744DA0007C71A /* LogInChildCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 556A36E9286744DA0007C71A /* LogInChildCoordinator.swift */; };
 		556A36EC286744E40007C71A /* HomeChildCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 556A36EB286744E40007C71A /* HomeChildCoordinator.swift */; };
+		55D48F4F286982980063BF0B /* ChildCoordinatorFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55D48F4E286982980063BF0B /* ChildCoordinatorFactory.swift */; };
+		55D48F51286989A70063BF0B /* HomeChildParameter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55D48F50286989A70063BF0B /* HomeChildParameter.swift */; };
 		55DD126F28670D700050DD27 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55DD126E28670D6F0050DD27 /* Coordinator.swift */; };
 		55DD127128670DA70050DD27 /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55DD127028670DA70050DD27 /* MainCoordinator.swift */; };
 		55DD127328670E400050DD27 /* CoordinatorBoard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55DD127228670E400050DD27 /* CoordinatorBoard.swift */; };
@@ -37,6 +39,8 @@
 		55405BE0286654DF00FA6053 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		556A36E9286744DA0007C71A /* LogInChildCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInChildCoordinator.swift; sourceTree = "<group>"; };
 		556A36EB286744E40007C71A /* HomeChildCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeChildCoordinator.swift; sourceTree = "<group>"; };
+		55D48F4E286982980063BF0B /* ChildCoordinatorFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChildCoordinatorFactory.swift; sourceTree = "<group>"; };
+		55D48F50286989A70063BF0B /* HomeChildParameter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeChildParameter.swift; sourceTree = "<group>"; };
 		55DD126E28670D6F0050DD27 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		55DD127028670DA70050DD27 /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
 		55DD127228670E400050DD27 /* CoordinatorBoard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatorBoard.swift; sourceTree = "<group>"; };
@@ -56,6 +60,7 @@
 		552124142866E11900EEC8BC /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				55D48F50286989A70063BF0B /* HomeChildParameter.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -85,6 +90,7 @@
 				55DD126E28670D6F0050DD27 /* Coordinator.swift */,
 				55DD127028670DA70050DD27 /* MainCoordinator.swift */,
 				55DD127228670E400050DD27 /* CoordinatorBoard.swift */,
+				55D48F4E286982980063BF0B /* ChildCoordinatorFactory.swift */,
 			);
 			path = Coordinator;
 			sourceTree = "<group>";
@@ -202,10 +208,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				55D48F4F286982980063BF0B /* ChildCoordinatorFactory.swift in Sources */,
 				552124132866E11200EEC8BC /* LoginViewController.swift in Sources */,
 				556A36EA286744DA0007C71A /* LogInChildCoordinator.swift in Sources */,
 				55DD127128670DA70050DD27 /* MainCoordinator.swift in Sources */,
 				55405BD3286654DD00FA6053 /* AppDelegate.swift in Sources */,
+				55D48F51286989A70063BF0B /* HomeChildParameter.swift in Sources */,
 				55405BD5286654DD00FA6053 /* SceneDelegate.swift in Sources */,
 				55DD127328670E400050DD27 /* CoordinatorBoard.swift in Sources */,
 				5521241B2866E15A00EEC8BC /* SignInViewController.swift in Sources */,

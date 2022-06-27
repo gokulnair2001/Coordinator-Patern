@@ -91,7 +91,7 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="uSy-wO-f4Q">
                                 <rect key="frame" x="20" y="205" width="374" height="88"/>
                                 <subviews>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="UserName" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hIx-mK-AKE">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="gokul" borderStyle="roundedRect" placeholder="UserName" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hIx-mK-AKE">
                                         <rect key="frame" x="0.0" y="0.0" width="374" height="34"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <textInputTraits key="textInputTraits"/>
@@ -182,12 +182,27 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BH0-Ne-Xeo">
+                                <rect key="frame" x="147" y="573" width="120" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="120" id="dgk-PG-E48"/>
+                                    <constraint firstAttribute="height" constant="50" id="gQb-oA-wKt"/>
+                                </constraints>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="LogOut"/>
+                                <buttonConfiguration key="configuration" style="tinted" title="LogOut" cornerStyle="large"/>
+                                <connections>
+                                    <action selector="logoutButton:" destination="khS-Cf-HsW" eventType="touchUpInside" id="KF1-O8-hCh"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="bcx-MS-EXS"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="BH0-Ne-Xeo" firstAttribute="top" secondItem="ln7-hI-PPU" secondAttribute="bottom" constant="80" id="IXj-WM-QV6"/>
                             <constraint firstItem="ln7-hI-PPU" firstAttribute="centerX" secondItem="6hU-AB-KJ9" secondAttribute="centerX" id="Pd9-LE-B8a"/>
                             <constraint firstItem="uAe-1J-69L" firstAttribute="leading" secondItem="bcx-MS-EXS" secondAttribute="leading" constant="20" id="YWH-oh-O4B"/>
+                            <constraint firstItem="BH0-Ne-Xeo" firstAttribute="centerX" secondItem="6hU-AB-KJ9" secondAttribute="centerX" id="cqO-Cn-kV1"/>
                             <constraint firstItem="ln7-hI-PPU" firstAttribute="centerY" secondItem="6hU-AB-KJ9" secondAttribute="centerY" id="hD0-cZ-w4S"/>
                             <constraint firstItem="uAe-1J-69L" firstAttribute="top" secondItem="bcx-MS-EXS" secondAttribute="top" id="qNP-Rh-SHa"/>
                             <constraint firstItem="bcx-MS-EXS" firstAttribute="trailing" secondItem="uAe-1J-69L" secondAttribute="trailing" constant="20" id="rzj-RB-NYj"/>
